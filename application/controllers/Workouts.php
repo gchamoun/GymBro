@@ -9,6 +9,12 @@ class Workouts extends CI_Controller
     }
     public function getWorkouts()
     {
-        $users = $this->Workouts_model->getWorkouts();
+        $workouts = $this->Workouts_model->getWorkouts();
+        echo json_encode(array('results' => $workouts));
+    }
+    public function getWorkoutsLeaderboard()
+    {
+        $workouts = $this->Workouts_model->getWorkoutsLeaderboard();
+        echo json_encode(array('results' => $workouts));
     }
 }
